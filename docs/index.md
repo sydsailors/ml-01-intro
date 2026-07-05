@@ -124,7 +124,7 @@ to predict diabetes risk using patient health data.
 The model was trained using Logistic Regression.
 Roc auc was used to evaluate accuracy.
 
-Results for this project included
+Results for this project included:
 - Accuracy: 0.726 (The model made a correct prediction 72.6% of the time)
 - ROC AUC: 0.794 (good model discrimination ability)
 - Predicted probability of diabetes: 69.65%
