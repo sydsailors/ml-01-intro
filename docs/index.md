@@ -23,56 +23,122 @@ to get the example projects running on your machine.
 
 ## Phase 4. Technical Modification
 
-Describe your small technical modification to the example project.
+Some easy modifications for Phase 4 included:
 
-Include:
+- copying `app_case.py` and renaming it `app_sailors.py`
+- aligned new case's columns with `FEATURE_COLS` before prediction in Section 7
+- updated parameters for `new_case`
+  - `hours_studied`: 2
+  - `practice_quizzes`: 5
+  - `attendance_pct`: 100
+  - `sleep_hours`: 6.0
+  - `prior_score`: 88
 
-- What you changed
-- Why you chose that change
-- How you verified that it worked
-- What result, output, chart, metric, or behavior confirmed the change
+Output of modification:
+```shell
+| INFO | ML | Duplicate row count: 0
+| INFO | ML | Create clean view.........
+| INFO | ML | Creating clean modeling view
+| INFO | ML | Clean view: 10 rows, 6 columns
+| INFO | ML | Train supervised model....
+| INFO | ML | Training LinearRegression model
+| INFO | ML | Mean absolute error: 0.48
+| INFO | ML | R-squared: 1.00
+| INFO | ML | Predict one case..........
+| INFO | ML | Predicting one new case
+| INFO | ML | New case:
+   hours_studied  practice_quizzes  attendance_pct  sleep_hours  prior_score
+0              2                 5             100          6.0           88
+| INFO | ML | Predicted score: 77.3
+```
 
-Compared with the example project,
-explain what is different and why the change matters.
+The addition of `new_case = new_case[FEATURE_COLS]` to section 7 of the app
+ensures feature alignment to prevent bugs related to column order.
 
-Was it easy, or surprisingly challenging and why do you think so?
+Modifying the numbers for the new case and running the modification successfully shows
+how a trained supervised regression model responds to different input features.
+
+To run Phase 4:
+```shell
+uv run python -m mlstudio.app_sailors
+```
 
 ## Phase 5. Custom Project (OPTIONAL in Module 1)
 
-Describe your custom project.
+For my custom project `app_diabetes.py`, I decided to predict diabetes status based on health factors.
+`data/raw/diabetes.csv` contains >70,000 records with patient health indicators such as blood pressure, BMI,
+cholesterol, smoking status, physical activity, age, and cardiovascular history.
+The target variable: `Diabetes_binary`, where
+0 = no diabetes and 1 = diabetes.
+This project represents a supervised machine learning classification problem.
+The model is trained on labeled data where the outcome is already known
+and the goal is to learn a relationship between patient health indicators
+(`HighBP`, `HighChol`, `BMI`, `Smoker`, `Stroke`,
+ `HeartDiseaseorAttack`, `PhysActivity`, and `Age`)
+ and diabetes outcome so the model can predict the probability
+ of diabetes for new cases.
 
-In Module 1, this includes choosing a dataset, identifying a target,
-and explaining what kind of ML problem it represents.
+ To run Phase 5:
+```shell
+uv run python -m mlstudio.app_diabetes
+```
 
 ### Basis and Data
 
-Describe the dataset, input, or example you started with.
+The example project in `src/mlstudio/app_case.py` predicted a student's score from
+study habits using the `hours_scores_case.csv` dataset.
+I used the workflow and applied it to `app.diabetes.py`
+datset that was included in the repo.
 
-Include:
+The `diabetes.csv` dataset was derived from the Behavioral Risk Factor
+Surveillance System (BRFSS) 2015 survey. The full citation can be found in
+`data/raw/README.md`
 
-- The original example dataset or input
-- The data source
-- Why you chose it, kept it, or changed it
-- Any important limitations or assumptions
+I chose this dataset because it represents a real-world healthcare problem
+with meaningful implications. The dataset aligns well with
+supervised learning concepts introduced in Module 1.
+
+Key limitations or assumptions include:
+- The data is already presumed to be pre-cleaned and correctly encoded.
+- Age is represented as a ordinal category compared to
+exact years.
+- The dataset only captures the diesease as a snapshot
+ rather than disease progression over time.
 
 ### Modeling Approach
 
-Describe the problem type and approach for this project.
+This project represents a supervised learning problem because
+the dataset `diabetes.csv` includes a known target variable
+and the model is trained using labeled examples to learn
+a mapping from features to outcomes.
 
-Include:
-
-- Is this supervised or unsupervised and how do you know
+Though the original example referenced regression, this
+problem is more modeled as a binary classification task, which
+involved implementing a Logic Regression model to predict the
+probability that an individual has diabetes based on their health factors.
 
 ### Summary
 
-Summarize your custom project.
+In this project, I built a supervised machine learning workflow
+to predict diabetes risk using patient health data.
+The model was trained using Logistic Regression.
+Roc auc was used to evaluate accuracy.
 
-Include:
+Results for this project included
+- Accuracy: 0.726 (The model made a correct prediction 72.6% of the time)
+- ROC AUC: 0.794 (good model discrimination ability)
+- Predicted probability of diabetes: 69.65%
+  - factors included:
+    - HighBP: 1.0
+    - HighChol: 1.0
+    - BMI: 30
+    - Smoker: 0.0
+    - Stroke: 0.0
+    - HeartDiseaseorAttack: 0.0
+    - PhysActivity: 1.0
+    - Age: 11
 
-- How you implemented your custom work
-- What results you got
-- What you learned
-- How well you exercised the skills covered in this project
-- What kinds of real problems you could apply these skills to in the future
+This project helped reinforce key skills such as data preparation,
+ model training, evaluation, and visualization.
 
-Display at least one image or screenshot showing your work.
+These techniques can be applied to real-world problems such as healthcare risk prediction, insurance modeling, and population health analysis.

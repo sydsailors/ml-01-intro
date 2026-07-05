@@ -179,6 +179,14 @@ Press `Ctrl+c` (both keys together) or `Ctrl+Z` then `Enter` on Windows.
 
 ## Findings and Visuals
 
+```shell
+uv run python -m mlstudio.app_sailors
+```
+
+```shell
+uv run python -m mlstudio.app_diabetes
+```
+
 Take screenshots of your charts and provide them here with a discussion.
 In Markdown, display a figure by using:
 an exclamation mark immediately followed by square brackets containing a useful caption
