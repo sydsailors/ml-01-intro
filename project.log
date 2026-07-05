@@ -318,3 +318,112 @@ dtype: int64
 2026-07-05 14:53:22 | INFO | ML | ========================
 2026-07-05 14:53:22 | INFO | ML | Executed successfully!
 2026-07-05 14:53:22 | INFO | ML | ========================
+2026-07-05 16:44:17 | INFO | ML | === RUN START ===
+2026-07-05 16:44:17 | INFO | ML | project=ML
+2026-07-05 16:44:17 | INFO | ML | repo_dir=ml-01-intro
+2026-07-05 16:44:17 | INFO | ML | python=3.14.5
+2026-07-05 16:44:17 | INFO | ML | os=Darwin 20.6.0
+2026-07-05 16:44:17 | INFO | ML | shell=zsh
+2026-07-05 16:44:17 | INFO | ML | cwd=.
+2026-07-05 16:44:17 | INFO | ML | github_actions=False
+2026-07-05 16:44:17 | INFO | ML | === RUN START ===
+2026-07-05 16:44:17 | INFO | ML | project=ML
+2026-07-05 16:44:17 | INFO | ML | repo_dir=ml-01-intro
+2026-07-05 16:44:17 | INFO | ML | python=3.14.5
+2026-07-05 16:44:17 | INFO | ML | os=Darwin 20.6.0
+2026-07-05 16:44:17 | INFO | ML | shell=zsh
+2026-07-05 16:44:17 | INFO | ML | cwd=.
+2026-07-05 16:44:17 | INFO | ML | github_actions=False
+2026-07-05 16:44:17 | INFO | ML | ========================
+2026-07-05 16:44:17 | INFO | ML | START main()
+2026-07-05 16:44:17 | INFO | ML | ========================
+2026-07-05 16:44:17 | INFO | ML | Load dataset..............
+2026-07-05 16:44:17 | INFO | ML | Loading dataset: diabetes
+2026-07-05 16:44:17 | INFO | ML | Loaded: 70692 rows, 22 columns
+2026-07-05 16:44:17 | DEBUG | ML | 
+   Diabetes_binary  HighBP  HighChol  CholCheck   BMI  Smoker  Stroke  HeartDiseaseorAttack  PhysActivity  Fruits  \
+0              0.0     1.0       0.0        1.0  26.0     0.0     0.0                   0.0           1.0     0.0   
+1              0.0     1.0       1.0        1.0  26.0     1.0     1.0                   0.0           0.0     1.0   
+2              0.0     0.0       0.0        1.0  26.0     0.0     0.0                   0.0           1.0     1.0   
+3              0.0     1.0       1.0        1.0  28.0     1.0     0.0                   0.0           1.0     1.0   
+4              0.0     0.0       0.0        1.0  29.0     1.0     0.0                   0.0           1.0     1.0   
+
+   Veggies  HvyAlcoholConsump  AnyHealthcare  NoDocbcCost  GenHlth  MentHlth  PhysHlth  DiffWalk  Sex   Age  \
+0      1.0                0.0            1.0          0.0      3.0       5.0      30.0       0.0  1.0   4.0   
+1      0.0                0.0            1.0          0.0      3.0       0.0       0.0       0.0  1.0  12.0   
+2      1.0                0.0            1.0          0.0      1.0       0.0      10.0       0.0  1.0  13.0   
+3      1.0                0.0            1.0          0.0      3.0       0.0       3.0       0.0  1.0  11.0   
+4      1.0                0.0            1.0          0.0      2.0       0.0       0.0       0.0  0.0   8.0   
+
+   Education  Income  
+0        6.0     8.0  
+1        6.0     8.0  
+2        6.0     8.0  
+3        6.0     8.0  
+4        5.0     8.0  
+2026-07-05 16:44:17 | INFO | ML | Inspect dataset...........
+2026-07-05 16:44:17 | INFO | ML | Column names
+2026-07-05 16:44:17 | DEBUG | ML | ['Diabetes_binary', 'HighBP', 'HighChol', 'CholCheck', 'BMI', 'Smoker', 'Stroke', 'HeartDiseaseorAttack', 'PhysActivity', 'Fruits', 'Veggies', 'HvyAlcoholConsump', 'AnyHealthcare', 'NoDocbcCost', 'GenHlth', 'MentHlth', 'PhysHlth', 'DiffWalk', 'Sex', 'Age', 'Education', 'Income']
+2026-07-05 16:44:17 | INFO | ML | DataFrame info
+2026-07-05 16:44:17 | INFO | ML | Dataset shape: 70692 rows, 22 columns
+2026-07-05 16:44:17 | INFO | ML | Check data quality........
+2026-07-05 16:44:17 | INFO | ML | Missing values by column
+2026-07-05 16:44:17 | DEBUG | ML | 
+Diabetes_binary         0
+HighBP                  0
+HighChol                0
+CholCheck               0
+BMI                     0
+Smoker                  0
+Stroke                  0
+HeartDiseaseorAttack    0
+PhysActivity            0
+Fruits                  0
+Veggies                 0
+HvyAlcoholConsump       0
+AnyHealthcare           0
+NoDocbcCost             0
+GenHlth                 0
+MentHlth                0
+PhysHlth                0
+DiffWalk                0
+Sex                     0
+Age                     0
+Education               0
+Income                  0
+dtype: int64
+2026-07-05 16:44:17 | INFO | ML | Duplicate row count: 1635
+2026-07-05 16:44:17 | INFO | ML | Create clean view.........
+2026-07-05 16:44:17 | INFO | ML | Creating clean modeling view
+2026-07-05 16:44:17 | INFO | ML | Clean view: 70692 rows, 9 columns
+2026-07-05 16:44:17 | INFO | ML | Train supervised model....
+2026-07-05 16:44:17 | INFO | ML | Training LogisticRegression model
+2026-07-05 16:44:17 | INFO | ML | Accuracy: 0.726
+2026-07-05 16:44:17 | INFO | ML | ROC AUC: 0.794
+2026-07-05 16:44:17 | INFO | ML | Predict one case..........
+2026-07-05 16:44:17 | INFO | ML | Predicting one new case
+2026-07-05 16:44:17 | INFO | ML | New case:
+   HighBP  HighChol  BMI  Smoker  Stroke  HeartDiseaseorAttack  PhysActivity  Age
+0     1.0       1.0   30     0.0     0.0                   0.0           1.0   11
+2026-07-05 16:44:17 | INFO | ML | Predicted probability of diabetes: 69.65%
+2026-07-05 16:44:17 | INFO | ML | Create charts.............
+2026-07-05 16:44:17 | INFO | ML | Creating chart: BMI vs diabetes outcome (scatter plot)
+2026-07-05 16:44:18 | INFO | ML | Creating chart: model coefficients
+2026-07-05 16:44:18 | INFO | ML | Got a figure Figure(1800x1000) and axes Axes(0.125,0.11;0.775x0.77) from plt.subplots().
+2026-07-05 16:44:18 | INFO | ML | Summarize workflow........
+2026-07-05 16:44:18 | INFO | ML | ========================
+2026-07-05 16:44:18 | INFO | ML | SUMMARY
+2026-07-05 16:44:18 | INFO | ML | ========================
+2026-07-05 16:44:18 | INFO | ML | Dataset: diabetes
+2026-07-05 16:44:18 | INFO | ML | Original rows: 70692
+2026-07-05 16:44:18 | INFO | ML | Clean rows: 70692
+2026-07-05 16:44:18 | INFO | ML | Features: ['HighBP', 'HighChol', 'BMI', 'Smoker', 'Stroke', 'HeartDiseaseorAttack', 'PhysActivity', 'Age']
+2026-07-05 16:44:18 | INFO | ML | Target: Diabetes_binary
+2026-07-05 16:44:18 | INFO | ML | ----- in a script, call plt.show() once at the end to display all charts -----
+2026-07-05 16:44:18 | INFO | ML | ----- in a script, CLOSE the chart windows with the close button to CONTINUE -----
+2026-07-05 16:45:07 | INFO | ML | Workflow complete
+2026-07-05 16:45:07 | INFO | ML | IMPORTANT: This script creates chart windows.
+2026-07-05 16:45:07 | INFO | ML | Close chart windows and terminate this process with CTRL+c as needed.
+2026-07-05 16:45:07 | INFO | ML | ========================
+2026-07-05 16:45:07 | INFO | ML | Executed successfully!
+2026-07-05 16:45:07 | INFO | ML | ========================
