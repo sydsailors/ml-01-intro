@@ -187,9 +187,9 @@ uv run python -m mlstudio.app_sailors
 uv run python -m mlstudio.app_diabetes
 ```
 
-![BMI vs Diabetes Outcome](.docs/images/BMI_vs_diabetes.png)
+![BMI vs Diabetes Outcome](docs/images/BMI_vs_diabetes.png)
 
-![Model coefficients](.docs/images/Model_coefficients.png)
+![Model coefficients](docs/images/Model_coefficients.png)
 
 ## Project Documentation
 
